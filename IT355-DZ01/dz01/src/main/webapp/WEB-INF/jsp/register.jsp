@@ -28,18 +28,26 @@
         <div class="login-page">
             <div class="form">
                 <form class="register-form">
-                    <input type="text" placeholder="Name"/>
-                    <input type="password" placeholder="Password"/>
-                    <input type="password" placeholder="Confirm password"/>
-                    <input type="text" placeholder="Email address"/>
-                    <input type="text" placeholder="Name"/>
-                    <input type="text" placeholder="Surname"/>
+                    <form:label path="placeholders"><spring:message code="username" var="placeholder"/></form:label>
+                    <input placeholder="Username" type="text" placeholder="${placeholder}" />
+                    <form:label path="placeholders"><spring:message code="password" var="placeholder"/></form:label>
+                    <input placeholder="Password" type="password" placeholder="${placeholder}"/>
+                    <form:label path="placeholders"><spring:message code="confirmPassword" var="placeholder"/></form:label>
+                    <input placeholder="Confirm password" type="password" placeholder="${placeholder}"/>
+                    <form:label path="placeholders"><spring:message code="emailAdress" var="placeholder"/></form:label>
+                    <input placeholder="Email address" type="text" placeholder="${placeholder}"/>
+                    <form:label path="placeholders"><spring:message code="name" var="placeholder"/></form:label>
+                    <input placeholder="Name" type="text" placeholder="${placeholder}"/>
+                    <form:label path="placeholders"><spring:message code="surname" var="placeholder"/></form:label>
+                    <input  placeholder="Surname" type="text" placeholder="${placeholder}"/>
                     <button>Create</button>
                     <p class="message">Already registered? <a href="#">Sign In</a></p>
                 </form>
                 <form class="login-form">
-                    <input type="text" placeholder="Username"/>
-                    <input type="password" placeholder="Password"/>
+                    <form:label path="placeholders"><spring:message code="username" var="placeholder"/></form:label>
+                    <input placeholder="Username" type="text" placeholder="${placeholder}"/>
+                    <form:label path="placeholders"><spring:message code="password" var="placeholder"/></form:label>
+                    <input placeholder="Password" type="password" placeholder="${placeholder}"/>
                     <button>Login</button>
                     <p class="message">Not registered? <a href="#">Create an account</a></p>
                 </form>
