@@ -11,7 +11,7 @@
         <title>IT355</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <title>Register</title>
 
         <link href="resources/css/bootstrap.min.css" rel="stylesheet">
@@ -24,10 +24,16 @@
     </head>
     <body>
         <%@include file="header.jsp" %>
-
+        <c:choose>
+            <c:when test="${empty username}">
+            </c:when>
+            <c:otherwise>
+                <h2>User ${username} <br/>you are not allowed to see this page.</h2>
+                </c:otherwise>
+            </c:choose>
         <div class="login-page">
             <div class="form">
-                <form class="register-form">
+                <form class="register-form" >
                     <form:label path="placeholders"><spring:message code="username" var="placeholder"/></form:label>
                     <input placeholder="Username" type="text" placeholder="${placeholder}" />
                     <form:label path="placeholders"><spring:message code="password" var="placeholder"/></form:label>
@@ -42,6 +48,7 @@
                     <input  placeholder="Surname" type="text" placeholder="${placeholder}"/>
                     <button>Create</button>
                     <p class="message">Already registered? <a href="#">Sign In</a></p>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 </form>
                 <form class="login-form">
                     <form:label path="placeholders"><spring:message code="username" var="placeholder"/></form:label>
@@ -50,6 +57,7 @@
                     <input placeholder="Password" type="password" placeholder="${placeholder}"/>
                     <button>Login</button>
                     <p class="message">Not registered? <a href="#">Create an account</a></p>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                 </form>
             </div>
         </div>
