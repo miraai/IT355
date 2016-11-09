@@ -6,7 +6,10 @@
 package com.it355.dz01;
 
 
-import com.sun.istack.internal.logging.Logger;
+
+
+
+import java.util.logging.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -20,7 +23,7 @@ import org.aspectj.lang.annotation.Before;
 @Aspect
 public class Logs {
     
-    private Logger log = Logger.getLogger(getClass());
+    private final Logger log = Logger.getLogger("");
     
     @After("execution(* com.it255.dz01.IndexController.*(..))")
     public void logAfter(JoinPoint point) {
