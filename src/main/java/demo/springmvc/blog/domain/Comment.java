@@ -6,6 +6,7 @@ package demo.springmvc.blog.domain;
  */
 
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,17 @@ public class Comment {
 	private int post_id;
         @Column(name = "user_username")
 	private String user_username;
+        private List<Comment> contents;
 
+        public List<Comment> getContents() {
+            return contents;
+        }
+
+        public void setContents(List<Comment> contents) {
+            this.contents = contents;
+        }
+        
+        
 	public String getUser_username() {
 		return user_username;
 	}
@@ -80,4 +91,8 @@ public class Comment {
 	public void setPost_id(int post_id) {
 		this.post_id = post_id;
 	}
+
+        public Comment getCommentByID(int id) {
+            return null;
+        }
 }
