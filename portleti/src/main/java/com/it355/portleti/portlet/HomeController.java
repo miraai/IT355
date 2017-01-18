@@ -25,9 +25,6 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	@RenderMapping
 	public String home(Locale locale, Model model) {
 		logger.info("Vreme je (valjda treba da bude) "+ locale.toString());
